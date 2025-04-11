@@ -1,5 +1,5 @@
 RuleId,RootId,PrevId,SysID,RuleCode,StockExchangeId,DisclosureLevelId,RepEntityId,EntityId,RuleBasisId,RuleTypeId,RuleCategoryId,RuleNumeratorTypeId,TriggerRate,TriggerMin,TriggerMax,MinLong,MinCap,RateNumerator,RateDenominator,IndustryGroupId,SpecialConditionId,TransactionalReportFlag,Remark,RuleStateId,ApprovedDate,LastRejectedDT,LastRejectedBy,ReviewComment,EffectiveDate,Active,CreatedDT,CreatedBy,ModifiedDT,ModifiedBy,CountryCode,UploadRuleFileId,AdvCondition
-,,,AU001,AUSSD001,,1,1,,10,1,1,1,0.05,0.05,1,,,5,100,0,0,0,0,1,12-11-2019 15:52,,,,12-11-2019 15:52,1,,,,,AU,,
+,,,RR001,AUSSD001,,1,1,,10,1,1,1,0.05,0.05,1,,,5,100,0,0,0,0,1,12-11-2019 15:52,,,,12-11-2019 15:52,1,,,,,AU,,
 ,,,AU002,AUSSD002,,1,1,,10,21,1,1,0.01,0.05,1,,,1,100,0,0,0,0,1,12-11-2019 15:52,,,,12-11-2019 15:52,1,,,,,AU,,
 ,,,AU003,AUSSD003,,1,1,,10,51,1,1,0.05,0,0.05,,,5,100,0,0,0,0,1,12-11-2019 15:52,,,,12-11-2019 15:52,1,,,,,AU,,
 ,,,AU004,AUSSG001,,1,1,,6,1,3,1,0.01,0.01,1,0.05,,1,100,0,0,0,0,1,12-11-2019 15:52,,,,12-11-2019 15:52,1,,,,,AU,,
