@@ -1,786 +1,280 @@
-
-
-<!DOCTYPE html>
-
-<html lang="en">
-<head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=Edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content="Artius Global - Revolutionising Compliance" /><meta name="author" content="Global Notifications Solutions Pte Ltd" /><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /><title>
-	Artius Global - Revolutionising Compliance
-</title><link href="plugins/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-  
-    <!-- Bootstrap Select CSS -->
-    <link href="plugins/bootstrap/dist/css/bootstrap-select.css" rel="stylesheet" />
-    
-    <!-- animation CSS -->
-    <link href="plugins/css/animate.css" rel="stylesheet" />
-    <!-- Table Bootstrap -->
-    <link href="plugins/css/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
-    <!-- Treeview CSS -->
-    <link href="plugins/css/bootstrap-treeview.min.css" rel="stylesheet" type="text/css" />
-    <!-- Datatable CSS -->
-    <link href="plugins/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-    <!-- toast CSS -->
-    <link href="plugins/css/jquery.toast.css" rel="stylesheet" />
-    <!-- morris CSS -->
-    <link href="plugins/css/morris.css" rel="stylesheet" />
-    <!-- Multiple Select CSS -->
-    <link href="plugins/css/multi-select.css" rel="stylesheet" type="text/css" />
-    <!-- Date picker plugins css -->
-    <link href="plugins/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-    <!-- Time Picker Plugin Css -->
-    <link href="plugins/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" />
-    <!--alerts CSS -->
-    <link href="plugins/css/sweetalert.css" rel="stylesheet" type="text/css" />
-    <!-- Font Awesome CSS -->
-    <link href="plugins/css/icons/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <!-- material-design-iconic-font2 CSS -->
-    <link href="plugins/css/icons/material-design-iconic-font2/css/material-design-iconic-font.min.css" rel="stylesheet" />
-    <!-- themify-icons CSS -->
-    <link href="plugins/css/icons/themify-icons/themify-icons.css" rel="stylesheet" />
-    <!-- simple-line-icons CSS -->
-    <link href="plugins/css/icons/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" /><link href="plugins/css/style.css" type="text/css" rel="stylesheet" /><link href="plugins/css/megna-dark.css" type="text/css" rel="stylesheet" /></head>
-
-
-<body id="BodyId" class="fix-header" onload="display_ct();StartTimers();">
-
-    <!-- ============================================================== -->
-    <!-- Preloader -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
-        </svg>
-    </div>
-    <!-- ============================================================== -->
-    <!-- Wrapper -->
-    <!-- ============================================================== -->
-    <div id="wrapper">
-
-        <form method="post" action="./RuleImport.aspx" id="masterform" autocomplete="off" enctype="multipart/form-data">
-<div class="aspNetHidden">
-<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
-</div>
-
-<script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['masterform'];
-if (!theForm) {
-    theForm = document.masterform;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-//]]>
-</script>
-
-
-<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZI-ZTI90uEIxV_GH3d0GjBV8B6z0mfU9FITPYfF11pmKbUhsVliuzpitAHc_t5wbHA2&amp;t=638344371423008439" type="text/javascript"></script>
-
-
-<script src="/ScriptResource.axd?d=D9drwtSJ4hBA6O8UhT6CQgERLZIEpEdg6VSPpSYz5Vw5VrRWjavMsp2dCxd3-jw4Ke5BnJU1cTePA56vuNYuQyGfPUR5jEWTTa17UKwg87Xuq4AVqB76OyKmnTlG1xNqq1zyTZ9n2F8Sqwvvo-cgxyHYdr7tmZ8OtgjVcMgu5wA1&amp;t=ffffffffadad19fc" type="text/javascript"></script>
-<script type="text/javascript">
-//<![CDATA[
-if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
-//]]>
-</script>
-
-<script src="/ScriptResource.axd?d=JnUc-DEDOM5KzzVKtsL1tTB1tPz6kBEnno__c06l_9eQhhkFI5GQFMtpcDmMQ_9Gmq6qy6hgFt-kEmyK_94dfiVPzJ-sQ_9jpVi5uxKIo7neduTEYNRe84_E5lQLmF_O53SfxMZLPjdYxSXk0qYtVMIFy-PoluCuoay27dxn0ABVALpC-V1RGWwjgT7GQTzg0&amp;t=ffffffffadad19fc" type="text/javascript"></script>
-<div class="aspNetHidden">
-
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="4F314F88" />
-	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
-</div>
-
-            <!-- ============================================================== -->
-            <!-- Topbar header - style you can find in pages.scss -->
-            <!-- ============================================================== -->
-
-
-            <nav class="navbar navbar-default navbar-static-top m-b-0">
-
-                <div class="navbar-header">
-
-                    <div class="top-left-part">
-
-                        <!-- Logo -->
-                        <a class="logo" href="Dashboard.aspx">
-
-                            <!-- Logo icon image, you can use font-icon also -->
-                            <b id="smimage" class="hidden-md hidden-sm">
-                                <!--This is dark logo icon-->
-                                
-                                <!--This is light logo icon-->
-                                
-                                <img src="plugins/img/artius-logo-dark.png" id="smalllogo" alt="home" width="36" class="light-logo" />
-                            </b>
-                            <!-- Logo text image you can use text also -->
-                            <span class="hidden-xs">
-
-                                <!--This is dark logo text-->
-                                
-                                <!--This is light logo text-->
-                                <img src="plugins/img/artius-logo-text.png" id="larglogo" width="150" height="55" alt="home" />
-
-                            </span>
-                        </a>
-
-                    </div>
-
-
-                    
-                    <ul class="nav navbar-top-links navbar-left" style="position: absolute;margin: 37px 0px 0px 222px;">
-                        <li>
-                            
-                        </li>
-                    </ul>
-                    
-                    <ul class="nav navbar-top-links navbar-right pull-right" style="margin-bottom: -5px;">
-                        <li class="hidden-sm hidden-xs m-r-10 pull-left m-t-20"><span class="fa fa-clock-o"></span>
-                            <b>
-                                <span id="lblClock">Date Time: </span></b><span id="clock"></span>
-                        </li>
-                        <li>
-                            <div class="col-md-2"></div>
-                        </li>
-                        <li><a href="javascript:void(0)" class="open-close waves-effect waves-light d-xl-none"><i class="ti-close ti-menu"></i></a></li>
-                        <!-- .Task dropdown -->
-                        <li class="dropdown">
-                            <a class="dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="javascript:void(0)"><i class="mdi mdi-check-circle"></i>
-                                
-                            </a>
-                            <ul class="dropdown-menu dropdown-tasks animated bounceInRight" style="margin-top:-5px">
-                                
-                                
-                                <li style="padding:0px 20px">
-                                    <a href="javascript:void(0)" style="padding:0px 20px">
-                                        <div class="form-horizontal">
-                                            <p>
-                                                <strong style="color:black">Notification</strong> <span class="pull-right text-muted">
-                                                    <span id="lblNotificationCompleted">0.00% - Completed</span></span>
-                                            </p>
-                                            <div class="progress progress-striped active">
-                                                <div id="barNotification" class="progress-bar progress-bar-warning wow animated progress-animated" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:0.00%;"></div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown">
-                            <a class="dropdown-toggle profile-pic  waves-effect waves-light" data-bs-toggle="dropdown" href="javascript:void(0)">
-                                <img src="plugins/img/1.jpg" alt="user-img" width="36" class="img-circle" style="border-radius:50%;">
-                                <b class="hidden-xs">
-                                    <span id="lblLoginUser">Rahul</span></b><span class="caret"></span> </a>
-                            <ul class="dropdown-menu dropdown-user animated bounceInRight" style="margin-top:-5px">
-                                <li id="liProfile" style="padding-bottom:1%"><a href="Profile.aspx" style="color: black;"><i class="mdi mdi-account-card-details" style="padding-right: 3%;"></i>My Profile</a></li>
-                                
-                                <li style="padding-bottom:1%"><a href="Login.aspx?logout=CWIDcCYMYQZ8loq0C1TLlA==" style="color: black;"><i class="mdi mdi-logout"  style="padding-right: 3%;"></i>Logout</a></li>
-                            </ul>
-                            <!-- /.dropdown-user -->
-                        </li>
-                    </ul>
-                    
-                    
-                </div>
-                <!-- /.navbar-header -->
-                <!-- /.navbar-top-links -->
-                <!-- /.navbar-static-side -->
-
-            </nav>
-
-
-
-            <!-- End Top Navigation -->
-            <!-- ============================================================== -->
-            <!-- Left Sidebar - style you can find in sidebar.scss  -->
-            <!-- ============================================================== -->
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav">
-                    <div class="sidebar-head">
-                        <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span><span class="hide-menu">Menu</span></h3>
-                    </div>
-                    <ul class="nav" id="side-menu">
-                        <li id="menu_dashboard"><a href="Dashboard.aspx" class="waves-effect"><i class="mdi mdi-home-outline fa-fw" data-icon="v"></i><span class="hide-menu">Home <span class="fa arrow"></span></span></a></li>
-                        <li class="devider"></li>
-                        <li id="menu_processsummary"><a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-bell-ring-outline fa-fw" data-icon="v"></i><span class="hide-menu">My Notification <span class="fa arrow"></span></span></a>
-                            <ul class="nav nav-second-level">
-                                
-                                
-                                <li id="menu_notification"><a href="Notification.aspx" class="waves-effect"><span class="hide-menu">Today Notification </span></a></li>
-                                <li id="menu_holdingSummary"><a href="PositionSummary.aspx" class="waves-effect"><span class="hide-menu">Position Summary </span></a></li>
-                                <li id="menu_holdingManual"><a href="DataVerification.aspx" class="waves-effect"><span class="hide-menu">Data Verification </span></a></li>
-                                
-                                
-                                <li id="menu_processconfiguration"><a href="ProcessConfiguration.aspx" class="waves-effect"><span class="hide-menu">Daily Process </span></a></li>
-                                
-                            </ul>
-                        </li>
-                        
-                        <li class="devider"></li>
-                        <li id="menu_entity"><a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-layers fa-fw"></i><span class="hide-menu">Entity<span class="fa arrow"></span></span></a>
-                            <ul class="nav nav-second-level">
-                                <li id="menu_entityinformation"><a href="Entity.aspx" class="waves-effect"><span class="hide-menu">Entity Information </span></a></li>
-                            </ul>
-                        </li>
-                        <li class="devider"></li>
-                        <li id="menu_fund"><a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-cash-multiple fa-fw"></i><span class="hide-menu">Fund<span class="fa arrow"></span></span></a>
-                            <ul class="nav nav-second-level">
-                                <li id="menu_fundinformation"><a href="Fund.aspx"  class="waves-effect"><span class="hide-menu">Fund Information </span></a></li>
-                                <li id="menu_fundgroup"><a href="FundGroup.aspx"  class="waves-effect"><span class="hide-menu">Fund Group </span></a></li>
-                            </ul>
-                        </li>
-                        <li class="devider"></li>
-                        <li id="menu_security"><a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-bulletin-board fa-fw"></i><span class="hide-menu">Security<span class="fa arrow"></span></span></a>
-                            <ul class="nav nav-second-level">
-                                <li id="menu_securityinformation"><a href="Security.aspx" class="waves-effect"><span class="hide-menu">Security Information </span></a></li>
-                                <li id="menu_linkedsecurity"><a href="LinkedSecurity.aspx" class="waves-effect"><span class="hide-menu">Linked Security </span></a></li>
-                                <li id="menu_multilistsecurity"><a href="MultipleListed.aspx" class="waves-effect"><span class="hide-menu">Multiple Listed Security </span></a></li>
-                            </ul>
-                        </li>
-                        <li class="devider"></li>
-                        <li id="menu_rule"><a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-bank fa-fw"></i><span class="hide-menu">Rule<span class="fa arrow"></span></span></a>
-                            <ul class="nav nav-second-level">
-                                <li id="menu_exchangeinformation"><a href="StockExchange.aspx" class="waves-effect"><span class="hide-menu">Exchange Information </span></a></li>
-                                <li id="menu_marketconfig"><a href="MarketConfig.aspx" class="waves-effect"><span class="hide-menu">Market Configuration </span></a></li>
-                                <li id="menu_exchangerules"><a href="Rule.aspx" class="waves-effect"><span class="hide-menu">Exchange Rule </span></a></li>
-                                
-                                
-                            </ul>
-                        </li>
-                        <li class="devider"></li>
-                        <li id="menu_report"><a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-content-copy fa-fw" data-icon="v"></i><span class="hide-menu">Report <span class="fa arrow"></span></span></a>
-                             <ul class="nav nav-second-level">
-                                <li id="menu_standardreport"><a href="Report.aspx" class="waves-effect"><span class="hide-menu">Standard Report </span></a></li>
-                               </ul>
-                            
-                        </li>
-                         <li class="devider"></li>
-                        
-                        <li class="devider"></li>
-                        <li id="menu_administration"><a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw"></i><span class="hide-menu">Administration<span class="fa arrow"></span></span></a>
-                            <ul class="nav nav-second-level">
-                                <li id="menu_useradmin"><a href="UserAdmin.aspx" class="waves-effect"><span class="hide-menu">User Management</span></a> </li>
-                                <li id="menu_Role"><a href="Role.aspx" class="waves-effect"><span class="hide-menu">Role Management</span></a> </li>
-                                <li id="menu_RolePrivilege"><a href="RolePrivilege.aspx" class="waves-effect"><span class="hide-menu">Role Privilege</span></a> </li>
-                                <li id="menu_rulefileimport"><a href="RuleImport.aspx" class="waves-effect"><span class="hide-menu">Rule File Import </span></a></li>
-                                <li id="menu_MarketSecurityTypeImport"><a href="MarketSecurityType_Import.aspx" class="waves-effect"><span class="hide-menu">MarketSecurityType Import </span></a></li>
-                                <li id="menu_issuerlistimport"><a href="13FIssuerList.aspx" class="waves-effect"><span class="hide-menu">13F Issuer List Import </span></a></li>
-                                <li id="menu_sysconfig"><a href="SystemConfiguration.aspx" class="waves-effect"><span class="hide-menu">System Configuration</span></a> </li>
-                                <li id="menu_registration"><a href="Registration.aspx" class="waves-effect"><span class="hide-menu">Registration</span></a> </li>
-                                <li id="menu_holiday"><a href="Holiday.aspx" class="waves-effect"><span class="hide-menu">Holiday Calendar</span></a> </li>
-
-                                
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Left Sidebar -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Page Content -->
-            <!-- ============================================================== -->
-            <div id="page-wrapper">
-                <div class="container-fluid">
-                    
-    <script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('master$MainContent$ScriptManager1', 'masterform', ['tmaster$MainContent$UpdatePanel1','MainContent_UpdatePanel1','tmaster$MainContent$UpdatePanel3','MainContent_UpdatePanel3','tmaster$MainContent$UpdatePanel2','MainContent_UpdatePanel2'], [], ['master$MainContent$btnUplodRuleFile','MainContent_btnUplodRuleFile','master$MainContent$gridUploadedRuleFiles','MainContent_gridUploadedRuleFiles','master$MainContent$gridErrorLog','MainContent_gridErrorLog'], 90, 'master');
-//]]>
-</script>
-
-
-
-
-    <div id="MainContent_UpdatePanel1">
-	
-            <div class="row bg-title">
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">Rule File Import</h4>
-                </div>
-                <div class="col-md-12">
-                    <ul class="nav nav-tabs pull-right" role="tablist">
-                        
-
-                    </ul>
-                </div>
-
-
-
-
-            </div>
-            
-            <hr class="m-t-0 m-b-15" />
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="table-responsive">
-
-                        <div>
-		<table class="table table-bordered tables-triped dataTable display" cellspacing="0" rules="all" border="1" id="MainContent_gridUploadedRuleFiles" style="border-collapse:collapse;">
-			<tr>
-				<th scope="col">File Name</th><th scope="col">Uploaded By</th><th scope="col">Uploaded Date Time</th><th scope="col">LogFile</th>
-			</tr><tr>
-				<td>
-                                        <a href="@C:\AGSSD\RuleImport\NewRuleImport.csv" />
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkDownload_0" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl02$lnkDownload&#39;,&#39;&#39;)">RuleInputNewTemplate_20241127_v1.csv</a>
-                                    </td><td>MT_Admin</td><td>11/27/2024 1:18:45 PM</td><td>
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkviewlog_0" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl02$lnkviewlog&#39;,&#39;&#39;)">ViewLog</a>
-                                    </td>
-			</tr><tr class="GridViewAlterRow">
-				<td>
-                                        <a href="@C:\AGSSD\RuleImport\NewRuleImport.csv" />
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkDownload_1" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl03$lnkDownload&#39;,&#39;&#39;)">RuleInputTemplate_20240614_v4.csv</a>
-                                    </td><td>Cl_admin</td><td>11/26/2024 6:49:50 PM</td><td>
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkviewlog_1" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl03$lnkviewlog&#39;,&#39;&#39;)">ViewLog</a>
-                                    </td>
-			</tr><tr>
-				<td>
-                                        <a href="@C:\AGSSD\RuleImport\NewRuleImport.csv" />
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkDownload_2" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl04$lnkDownload&#39;,&#39;&#39;)">RuleInputTemplate_20240614_v2 - Copy.csv</a>
-                                    </td><td>Cl_admin</td><td>11/26/2024 6:47:55 PM</td><td>
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkviewlog_2" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl04$lnkviewlog&#39;,&#39;&#39;)">ViewLog</a>
-                                    </td>
-			</tr><tr class="GridViewAlterRow">
-				<td>
-                                        <a href="@C:\AGSSD\RuleImport\NewRuleImport.csv" />
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkDownload_3" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl05$lnkDownload&#39;,&#39;&#39;)">RuleInputTemplate_20240614_v1 1.csv</a>
-                                    </td><td>Rahul</td><td>11/26/2024 2:05:51 PM</td><td>
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkviewlog_3" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl05$lnkviewlog&#39;,&#39;&#39;)">ViewLog</a>
-                                    </td>
-			</tr><tr>
-				<td>
-                                        <a href="@C:\AGSSD\RuleImport\NewRuleImport.csv" />
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkDownload_4" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl06$lnkDownload&#39;,&#39;&#39;)">Rule_INC_200224_v8.csv</a>
-                                    </td><td>KP_Admin</td><td>2/20/2024 1:08:56 PM</td><td>
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkviewlog_4" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl06$lnkviewlog&#39;,&#39;&#39;)">ViewLog</a>
-                                    </td>
-			</tr><tr class="GridViewAlterRow">
-				<td>
-                                        <a href="@C:\AGSSD\RuleImport\NewRuleImport.csv" />
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkDownload_5" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl07$lnkDownload&#39;,&#39;&#39;)">Rule_INC_200224_v7.csv</a>
-                                    </td><td>KP_Admin</td><td>2/20/2024 1:08:29 PM</td><td>
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkviewlog_5" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl07$lnkviewlog&#39;,&#39;&#39;)">ViewLog</a>
-                                    </td>
-			</tr><tr>
-				<td>
-                                        <a href="@C:\AGSSD\RuleImport\NewRuleImport.csv" />
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkDownload_6" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl08$lnkDownload&#39;,&#39;&#39;)">Rule_INC_200224_v6.csv</a>
-                                    </td><td>KP_Admin</td><td>2/20/2024 1:03:20 PM</td><td>
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkviewlog_6" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl08$lnkviewlog&#39;,&#39;&#39;)">ViewLog</a>
-                                    </td>
-			</tr><tr class="GridViewAlterRow">
-				<td>
-                                        <a href="@C:\AGSSD\RuleImport\NewRuleImport.csv" />
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkDownload_7" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl09$lnkDownload&#39;,&#39;&#39;)">Rule_INC_200224_v3.csv</a>
-                                    </td><td>GJ_Admin</td><td>2/20/2024 12:40:43 PM</td><td>
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkviewlog_7" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl09$lnkviewlog&#39;,&#39;&#39;)">ViewLog</a>
-                                    </td>
-			</tr><tr>
-				<td>
-                                        <a href="@C:\AGSSD\RuleImport\NewRuleImport.csv" />
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkDownload_8" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl10$lnkDownload&#39;,&#39;&#39;)">Rule_INC_20022024.csv</a>
-                                    </td><td>KP_Admin</td><td>2/20/2024 12:09:29 PM</td><td>
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkviewlog_8" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl10$lnkviewlog&#39;,&#39;&#39;)">ViewLog</a>
-                                    </td>
-			</tr><tr class="GridViewAlterRow">
-				<td>
-                                        <a href="@C:\AGSSD\RuleImport\NewRuleImport.csv" />
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkDownload_9" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl11$lnkDownload&#39;,&#39;&#39;)">Rule_INC_200224_V2.csv</a>
-                                    </td><td>GJ_Admin</td><td>2/20/2024 11:11:01 AM</td><td>
-                                        <a id="MainContent_gridUploadedRuleFiles_lnkviewlog_9" href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles$ctl11$lnkviewlog&#39;,&#39;&#39;)">ViewLog</a>
-                                    </td>
-			</tr><tr>
-				<td colspan="4"><table>
-					<tr>
-						<td><span>1</span></td><td><a href="javascript:__doPostBack(&#39;master$MainContent$gridUploadedRuleFiles&#39;,&#39;Page$2&#39;)">2</a></td>
-					</tr>
-				</table></td>
-			</tr>
-		</table>
-	</div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div id="MainContent_namingpanel">
-		
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-8">
-
-                            
-                            <input type="file" name="master$MainContent$RuleFileUpload" id="MainContent_RuleFileUpload" class="form-control" />
-
-                            <div class="pull-right">
-                                <span style="background-color: #f0ad4e; color: white; letter-spacing: 0px; border-radius: 5px; font-size: 12px; font-weight: 600; padding: 3px 10px 2px;">Upload file in .csv format </span>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <input type="submit" name="master$MainContent$btnUplodRuleFile" value="Upload" onclick="return(alertConfirmation(&#39;Are you sure to upload this selected file?&#39;, &#39;Upload File&#39;,&#39;&#39;,this.id, event));" id="MainContent_btnUplodRuleFile" class="fcbtn btn btn-sm btn-info btn-1e" />
-                        </div>
-                    </div>
-                </div>
-            
-	</div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label class="col-form-label col-md-2"></label>
-                        <div class="col-md-6">
-                            <div class="pull-right">
-                                <span id="MainContent_lblMsg"></span>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8">
-                    
-                </div>
-            </div>
-            </br>
-            <div class="row">
-                <div class="col-md-12">
-
-                    
-                    <hr class="m-t-0 m-b-15" />
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="table-responsive">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-
-                    
-                    <hr class="m-t-0 m-b-15" />
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="table-responsive">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-
-        
-</div>
-
-    <div class="modal fade" id="modalViewLog" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3>View Log</h3>
-                </div>
-                <div id="MainContent_UpdatePanel3">
-	
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="table-responsive">
-                                        <span id="MainContent_lblNewRuleCount" style="color:Green;font-weight:bold;">New Rule Count :</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <span id="MainContent_lblUpdatedRuleCount" style="color:Blue;font-weight:bold;">Updated Rule Count :</span>
-                                        <div>
-
-	</div>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="form-group justify-content-center">
-                                                    <div class="form-group btn-group">
-                                            <input type="submit" name="master$MainContent$btnCloseLogModal" value="Close" id="MainContent_btnCloseLogModal" class="btn btn-info btn-1b" data-bs-dismiss="modal" />
-                                        
-                                </div>
-                            </div>
-                        </div>
-                    
-</div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="modalErrorLog" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3>Error Log</h3>
-                </div>
-                <div id="MainContent_UpdatePanel2">
-	
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="table-responsive">
-                                    <span id="MainContent_lbllog">Uploaded Rule file has error. Please review and re-upload.<br />
-                                            Click the link to download Error Log file.</span>
-
-                                    <div>
-
-	</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group justify-content-center">
-                                                    <div class="form-group btn-group">
-                                        <input type="submit" name="master$MainContent$Button1" value="Close" id="MainContent_Button1" class="btn btn-info btn-1b" data-bs-dismiss="modal" />
-                                 
-                            </div>
-                        </div>
-                    
-</div>
-            </div>
-        </div>
-    </div>
-    <script src="plugins/js/jquery.min.js"></script>
-    
-    <script type="text/javascript">
-
-
-        function openViewLogModal() {
-            $(document).ready(function () {
-            var myModal = new bootstrap.Modal(document.getElementById('modalViewLog'))
-            myModal.show({ backdrop: 'static', keyboard: false })
-                //$('#modalViewLog').modal({ backdrop: 'static', keyboard: false });
-            });
-        };
-        function openErrorLogModal() {
-            $(document).ready(function () {
-                var myModal = new bootstrap.Modal(document.getElementById('modalErrorLog'))
-                myModal.show({ backdrop: 'static', keyboard: false })
-                //$('#modalErrorLog').modal({ backdrop: 'static', keyboard: false });
-            });
-        };
-
-        //var checked = false;
-
-        //function alertConfirmation(title, process, msg, id, e) {
-
-        //    swal({
-        //        title: title,
-        //        text: msg,
-        //        type: "warning",
-        //        showCancelButton: true,
-        //        confirmButtonText: "Yes",
-        //        cancelButtonText: "No",
-        //        closeOnCancel: false
-        //    },
-        //        function (isConfirm) {
-        //            if (isConfirm) {
-        //                $('div.block').block({
-        //                    message: '<h4><img src="plugins/img/busy.gif" /> Please wait...</h4>',
-        //                    css: {
-        //                        border: '1px solid #fff'
-        //                    }
-        //                });
-
-        //                checked = true;
-
-        //                document.getElementById(id).click();
-
-        //            } else {
-        //                swal("Process Cancelled", process + " Process Cancelled", "error");
-        //                checked = false;
-        //            }
-        //        });
-
-        //    if (checked) {
-        //        checked = false;
-        //        return true;
-        //    }
-        //    else {
-        //        return false;
-        //    }
-        //};
-        function notificationAlert(header, msg, alert) {
-            $.toast({
-                heading: header,
-                text: msg,
-                position: 'bottom-right',
-                loaderBg: '#ff6849',
-                icon: alert,
-                hideAfter: 6000,
-                stack: 6
-            });
-        };
-
-        var checked = false;
-
-        function alertConfirmation(title, process, msg, id, e) {
-
-            swal({
-                title: title,
-                text: msg,
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonText: "Yes",
-                cancelButtonText: "No",
-                closeOnCancel: false
-            },
-                function (isConfirm) {
-                    if (isConfirm) {
-                        checked = true;
-
-                        document.getElementById(id).click();
-
-                    } else {
-                        swal("Action Cancelled", process + " Cancelled", "error");
-                        checked = false;
-                    }
-                });
-
-            if (checked) {
-                checked = false;
-                return true;
-            }
-            else {
-                return false;
-            }
-        };
-    </script>
-
-                </div>
-                <!-- /.container-fluid -->
-                <footer class="footer text-center">Copyright &copy; <span id="spancopyrite"></span> Artius Global. All rights reserved </footer>
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Page Content -->
-            <!-- ============================================================== -->
-        </form>
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="plugins/js/jquery.min.js"></script>
-    
-     <!-- Bootstrap with bundle  JavaScript -->
-    <script src="plugins/bootstrap/dist/js/bootstrap.bundle.js"></script>
-
-    <!--slimscroll JavaScript -->
-    <script src="plugins/js/jquery.slimscroll.js"></script>
-    <!--Wave Effects -->
-    <script src="plugins/js/waves.js"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="plugins/js/custom.min.js"></script>
-    <script src="plugins/js/jasny-bootstrap.js"></script>
-    <script src="plugins/js/toastr.js"></script>
-    <script src="plugins/js/validator.js"></script>
-    <!-- Common -->
-    <script src="plugins/js/common.js"></script>
-    <!--Counter js -->
-    <script src="plugins/js/jquery.waypoints.min.js"></script>
-    <script src="plugins/js/jquery.counterup.min.js"></script>
-    <!-- toast -->
-    <script src="plugins/js/jquery.toast.js"></script>
-    <!-- Datatable -->
-    <script src="plugins/js/jquery.dataTables.min.js"></script>
-    <script src="plugins/js/dataTables.responsive.js"></script>
-    <script src="plugins/js/dataTables.bootstrap.min.js"></script>
-
-
-
-    
-    <!-- Date Picker Plugin JavaScript -->
-    <script src="plugins/js/bootstrap-datepicker.min.js"></script>
-    <!-- Time Picker Plugin JavaScript -->
-    <script src="plugins/js/bootstrap-timepicker.min.js"></script>
-    <!-- Sweet-Alert  -->
-    <script src="plugins/js/sweetalert.min.js"></script>
-    <!--BlockUI Script -->
-    <script src="plugins/js/jquery.blockUI.js"></script>
-  
-    
-     <script src="plugins/bootstrap/dist/js/bootstrap-select.js"></script>
-  
-    <script type="text/javascript">
-        function display_c() {
-            var refresh = 1000; // Refresh rate in milli seconds
-            mytime = setTimeout('display_ct()', refresh)
-        }
-
-        function display_ct() {
-
-            var today = new Date();
-            var y = today.getFullYear();
-            var mn = today.getMonth() + 1;
-            var d = today.getDate();
-            var h = today.getHours();
-            var m = today.getMinutes();
-            var s = today.getSeconds();
-
-            mn = checkTime(mn);
-            d = checkTime(d);
-            h = checkTime(h);
-            m = checkTime(m);
-            s = checkTime(s);
-            x1 = y + "-" + mn + "-" + d + " " + h + ":" + m + ":" + s;
-            document.getElementById('clock').innerHTML = x1;
-            tt = display_c();
-        }
-
-        function checkTime(i) {
-            if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
-            return i;
-        }
-
-    </script>
-
-    <script type="text/javascript">          
-
-        var timoutNow = 62;
-        var logoutUrl = ;
-
-        var caltimoutNow = timoutNow * 60 * 1000;
-
-        var intervalset;
-
-        // Start timers.
-        function StartTimers() {
-            //timeoutTimer = setTimeout('IdleTimeout()',caltimoutNow);
-
-            intervalset = window.setInterval('Redirect()',
-                caltimoutNow);
-        }
-
-        document.getElementById("BodyId").onmousemove = function () { ResetTimers() };
-
-        function ResetTimers() {
-
-            clearInterval(intervalset);
-
-            StartTimers();
-        }
-
-        //Logout and Redirect to the page
-        function Redirect() {
-            window.location.href = logoutUrl;
-        }
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            $("input").attr("autocomplete", "off");
-            $("#spancopyrite").text((new Date).getFullYear());
-        }
-        );
-    </script>
-
-
-</body>
-</html>
+RuleId,RootId,PrevId,SysID,RuleCode,StockExchangeId,DisclosureLevelId,RepEntityId,EntityId,RuleBasisId,RuleTypeId,RuleCategoryId,RuleNumeratorTypeId,TriggerRate,TriggerMin,TriggerMax,MinLong,MinCap,RateNumerator,RateDenominator,IndustryGroupId,SpecialConditionId,TransactionalReportFlag,Remark,RuleStateId,ApprovedDate,LastRejectedDT,LastRejectedBy,ReviewComment,EffectiveDate,Active,CreatedDT,CreatedBy,ModifiedDT,ModifiedBy,CountryCode,UploadRuleFileId
+,,,AU001,AUSSD001,,1,1,,10,1,1,1,0.0500,0.0500,1.0000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,AU,
+,,,AU002,AUSSD002,,1,1,,10,21,1,1,0.0100,0.0500,1.0000,,,1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,AU,
+,,,AU003,AUSSD003,,1,1,,10,51,1,1,0.0500,0.0000,0.0500,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,AU,
+,,,AU004,AUSSG001,,1,1,,6,1,3,1,0.0100,0.0100,1.0000,0.05,,1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,AU,
+,,,AU005,AUSSG002,,1,1,,6,21,3,1,0.0100,0.0100,1.0000,0.05,,1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,AU,
+,,,AU006,AUSSG003,,1,1,,6,51,3,1,0.0100,0.0000,0.0100,0.05,,1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,AU,
+,,,AU007,AUSSN001,,2,1,,3,1,4,1,0.0001,0.0001,1.0000,,,0.01,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,AU,
+,,,AU008,AUSSN002,,2,1,,3,25,4,1,0.0001,0.0001,1.0000,,,0.01,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,AU,
+,,,AU009,AUSSN003,,2,1,,3,51,4,1,0.0001,0.0000,0.0001,,,0.01,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,AU,
+,,,CA001,CASSD001,,1,1,,8,1,1,1,0.1000,0.1000,1.0000,,,10,100,0,0,0,Early Warning and ARMS Initial Threshold,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,CA,
+,,,CA002,CASSD002,,1,1,,8,21,1,1,0.0200,0.1000,1.0000,,,2,100,0,0,0,Early Warning Subsequent Threshold,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,CA,
+,,,CA003,CASSD003,,1,1,,8,51,1,1,0.1000,0.0000,0.1000,,,10,100,0,0,0,Early Warning and ARMS Cessation Threshold,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,CA,
+,,,CA004,CASSG001,,2,1,,1,1,3,1,0.0000,0.0000,1.0000,,,0,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,CA,
+,,,DE001,DESSD001,,1,1,,9,1,1,1,0.0500,0.0500,1.0000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE002,DESSD002,,1,1,,9,22,1,1,0.0500,0.0500,0.1000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE003,DESSD003,,1,1,,9,22,1,1,0.1000,0.0500,0.1500,,,10,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE004,DESSD004,,1,1,,9,22,1,1,0.1500,0.1000,0.2000,,,15,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE005,DESSD005,,1,1,,9,22,1,1,0.2000,0.1500,0.2500,,,20,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE006,DESSD006,,1,1,,9,22,1,1,0.2500,0.2000,0.3000,,,25,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE007,DESSD007,,1,1,,9,22,1,1,0.3000,0.2500,0.5000,,,30,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE008,DESSD008,,1,1,,9,22,1,1,0.5000,0.3000,0.7500,,,50,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE009,DESSD009,,1,1,,9,22,1,1,0.7500,0.5000,1.0000,,,75,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0010,DESSD010,,1,1,,9,51,1,1,0.0500,0.0000,0.0500,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0011,DESSD011,,1,1,,9,1,1,2,0.0300,0.0300,1.0000,,,3,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0012,DESSD012,,1,1,,9,22,1,2,0.0500,0.0300,0.1000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0013,DESSD013,,1,1,,9,22,1,2,0.1000,0.0500,0.1500,,,10,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0014,DESSD014,,1,1,,9,22,1,2,0.1500,0.1000,0.2000,,,15,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0015,DESSD015,,1,1,,9,22,1,2,0.2000,0.1500,0.2500,,,20,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0016,DESSD016,,1,1,,9,22,1,2,0.2500,0.2000,0.3000,,,25,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0017,DESSD017,,1,1,,9,22,1,2,0.3000,0.2500,0.5000,,,30,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0018,DESSD018,,1,1,,9,22,1,2,0.5000,0.3000,0.7500,,,50,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0019,DESSD019,,1,1,,9,22,1,2,0.7500,0.5000,1.0000,,,75,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0020,DESSD020,,1,1,,9,51,1,2,0.0300,0.0000,0.0300,,,3,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0021,DESSN001,,2,1,,1,1,4,1,0.0010,0.0010,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0022,DESSN002,,2,1,,1,21,4,1,0.0010,0.0010,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0023,DESSN003,,2,1,,1,51,4,1,0.0010,0.0000,0.0010,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0024,DESSN004,,2,1,,1,1,4,1,0.0050,0.0050,1.0000,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0025,DESSN005,,2,1,,1,21,4,1,0.0010,0.0050,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,DE0026,DESSN006,,2,1,,1,51,4,1,0.0050,0.0000,0.0050,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,DE,
+,,,ES001,ESSSD001,,1,1,,9,1,1,1,0.0300,0.0300,1.0000,,,3,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES002,ESSSD002,,1,1,,9,22,1,1,0.0500,0.0300,0.1000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES003,ESSSD003,,1,1,,9,22,1,1,0.1000,0.0500,0.1500,,,10,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES004,ESSSD004,,1,1,,9,22,1,1,0.1500,0.1000,0.2000,,,15,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES005,ESSSD005,,1,1,,9,22,1,1,0.2000,0.1500,0.2500,,,20,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES006,ESSSD006,,1,1,,9,22,1,1,0.2500,0.2000,0.3000,,,25,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES007,ESSSD007,,1,1,,9,22,1,1,0.3000,0.2500,0.3500,,,30,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES008,ESSSD008,,1,1,,9,22,1,1,0.3500,0.3000,0.4000,,,35,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES009,ESSSD009,,1,1,,9,22,1,1,0.4000,0.3500,0.4500,,,40,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES0010,ESSSD010,,1,1,,9,22,1,1,0.4500,0.4000,0.5000,,,45,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES0011,ESSSD011,,1,1,,9,22,1,1,0.5000,0.4500,0.6000,,,50,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES0012,ESSSD012,,1,1,,9,22,1,1,0.6000,0.5000,0.7000,,,60,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES0013,ESSSD013,,1,1,,9,22,1,1,0.7000,0.6000,0.7500,,,70,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES0014,ESSSD014,,1,1,,9,22,1,1,0.7500,0.7000,0.8000,,,75,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES0015,ESSSD015,,1,1,,9,22,1,1,0.8000,0.7500,0.9000,,,80,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES0016,ESSSD016,,1,1,,9,22,1,1,0.9000,0.8000,1.0000,,,90,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES0017,ESSSD017,,1,1,,9,51,1,1,0.0300,0.0000,0.0300,,,3,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES0018,ESSSN001,,2,1,,1,1,4,1,0.0010,0.0010,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES0019,ESSSN002,,2,1,,1,21,4,1,0.0010,0.0010,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES0020,ESSSN003,,2,1,,1,51,4,1,0.0010,0.0000,0.0010,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES0021,ESSSN004,,2,1,,1,1,4,1,0.0050,0.0050,1.0000,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES0022,ESSSN005,,2,1,,1,21,4,1,0.0010,0.0050,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,ES0023,ESSSN006,,2,1,,1,51,4,1,0.0050,0.0000,0.0050,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,ES,
+,,,FR001,FRSSD001,,1,1,,1,1,1,1,0.0500,0.0500,1.0000,,,5,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR002,FRSSD002,,1,1,,1,22,1,1,0.1000,0.0500,0.1500,,,10,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR003,FRSSD003,,1,1,,1,22,1,1,0.1500,0.1000,0.2000,,,15,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR004,FRSSD004,,1,1,,1,22,1,1,0.2000,0.1500,0.2500,,,20,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR005,FRSSD005,,1,1,,1,22,1,1,0.2500,0.2000,0.3000,,,25,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR006,FRSSD006,,1,1,,1,22,1,1,0.3000,0.2500,0.3333,,,30,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR007,FRSSD007,,1,1,,1,22,1,1,0.3333,0.3000,0.5000,,,1,3,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR008,FRSSD008,,1,1,,1,22,1,1,0.5000,0.3333,0.6666,,,50,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR009,FRSSD009,,1,1,,1,22,1,1,0.6666,0.5000,0.9000,,,2,3,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0010,FRSSD010,,1,1,,1,22,1,1,0.9000,0.6666,0.9500,,,90,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0011,FRSSD011,,1,1,,1,22,1,1,0.9500,0.9000,1.0000,,,95,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0012,FRSSD012,,1,1,,1,51,1,1,0.0500,0.0000,0.0500,,,5,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0013,FRSSD013,,1,1,,9,1,1,1,0.0500,0.0500,1.0000,,,5,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0014,FRSSD014,,1,1,,9,22,1,1,0.1000,0.0500,0.1500,,,10,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0015,FRSSD015,,1,1,,9,22,1,1,0.1500,0.1000,0.2000,,,15,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0016,FRSSD016,,1,1,,9,22,1,1,0.2000,0.1500,0.2500,,,20,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0017,FRSSD017,,1,1,,9,22,1,1,0.2500,0.2000,0.3000,,,25,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0018,FRSSD018,,1,1,,9,22,1,1,0.3000,0.2500,0.3333,,,30,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0019,FRSSD019,,1,1,,9,22,1,1,0.3333,0.3000,0.5000,,,1,3,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0020,FRSSD020,,1,1,,9,22,1,1,0.5000,0.3333,0.6666,,,50,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0021,FRSSD021,,1,1,,9,22,1,1,0.6666,0.5000,0.9000,,,2,3,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0022,FRSSD022,,1,1,,9,22,1,1,0.9000,0.6666,0.9500,,,90,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0023,FRSSD023,,1,1,,9,22,1,1,0.9500,0.9000,1.0000,,,95,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0024,FRSSD024,,1,1,,9,51,1,1,0.0500,0.0000,0.0500,,,5,100,0,0,1,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0025,FRSSN001,,2,1,,1,1,4,1,0.0010,0.0010,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0026,FRSSN002,,2,1,,1,21,4,1,0.0010,0.0010,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0027,FRSSN003,,2,1,,1,51,4,1,0.0010,0.0000,0.0010,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0028,FRSSN004,,2,1,,1,1,4,1,0.0050,0.0050,1.0000,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0029,FRSSN005,,2,1,,1,21,4,1,0.0010,0.0050,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,FR0030,FRSSN006,,2,1,,1,51,4,1,0.0050,0.0000,0.0050,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,FR,
+,,,GB001,GBSSD001,,1,1,,10,1,1,1,0.0300,0.0300,1.0000,,,3,100,0,5,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,GB002,GBSSD002,,1,1,,10,24,1,1,0.0100,0.0300,1.0000,,,1,100,0,5,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,GB003,GBSSD003,,1,1,,10,51,1,1,0.0300,0.0000,0.0300,,,3,100,0,5,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,GB004,GBSSD004,,1,1,,10,1,1,1,0.0500,0.0500,1.0000,,,5,100,0,6,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,GB005,GBSSD005,,1,1,,10,22,1,1,0.1000,0.0500,0.1500,,,10,100,0,6,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,GB006,GBSSD006,,1,1,,10,22,1,1,0.1500,0.1000,0.2000,,,15,100,0,6,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,GB007,GBSSD007,,1,1,,10,22,1,1,0.2000,0.1500,0.2500,,,20,100,0,6,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,GB008,GBSSD008,,1,1,,10,22,1,1,0.2500,0.2000,0.3000,,,25,100,0,6,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,GB009,GBSSD009,,1,1,,10,22,1,1,0.3000,0.2500,0.5000,,,30,100,0,6,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,GB0010,GBSSD010,,1,1,,10,22,1,1,0.5000,0.3000,0.7000,,,50,100,0,6,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,GB0011,GBSSD011,,1,1,,10,22,1,1,0.7000,0.5000,0.7500,,,70,100,0,6,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,0,,,,,GB,
+,,,GB0012,GBSSD012,,1,1,,10,22,1,1,0.7500,0.7000,1.0000,,,75,100,0,6,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,GB0013,GBSSD013,,1,1,,10,51,1,1,0.0500,0.0000,0.0500,,,5,100,0,6,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,GB0014,GBSSN001,,2,1,,1,1,4,1,0.0020,0.0020,1.0000,,,0.2,100,0,0,0,0,1,2024-01-03 00:00:00,,,,2024-02-05 00:00:00,1,,,,,GB,
+,,,GB0015,GBSSN002,,2,1,,1,21,4,1,0.0010,0.0020,1.0000,,,0.1,100,0,0,0,0,1,2024-01-03 00:00:00,,,,2024-02-05 00:00:00,1,,,,,GB,
+,,,GB0016,GBSSN003,,2,1,,1,51,4,1,0.0020,0.0000,0.0020,,,0.2,100,0,0,0,0,1,2024-01-03 00:00:00,,,,2024-02-05 00:00:00,1,,,,,GB,
+,,,GB0017,GBSSN004,,2,1,,1,1,4,1,0.0050,0.0050,1.0000,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,GB0018,GBSSN005,,2,1,,1,21,4,1,0.0010,0.0050,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,GB0019,GBSSN006,,2,1,,1,51,4,1,0.0050,0.0000,0.0050,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,GB,
+,,,HK004,HKSSD004,,1,1,,8,1,1,1,0.0500,0.0500,1.0000,,,5,100,0,6,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,0,,,,,HK,
+,,,HK005,HKSSD005,,1,1,,8,24,1,1,0.0100,0.0500,1.0000,,,1,100,0,6,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,0,,,,,HK,
+,,,HK006,HKSSD006,,1,1,,8,51,1,1,0.0500,0.0000,0.0500,,,5,100,0,6,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,0,,,,,HK,
+,,,HK007,HKSSG001,,1,1,,7,1,3,1,0.0100,0.0100,1.0000,0.05,,1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,HK,
+,,,HK008,HKSSG002,,1,1,,7,21,3,1,0.0100,0.0100,1.0000,0.05,,1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,HK,
+,,,HK009,HKSSG003,,1,1,,7,51,3,1,0.0100,0.0000,0.0100,0.05,,1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,HK,
+,,,HK0010,HKSSN001,,2,1,,1,1,4,1,0.0002,0.0002,1.0000,,,0.02,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,HK,
+,,,HK0011,HKSSN002,,2,1,,1,25,4,1,0.0002,0.0002,1.0000,,,0.02,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,HK,
+,,,HK0012,HKSSN003,,2,1,,1,51,4,1,0.0002,0.0000,0.0002,,,0.02,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,HK,
+,,,IT001,ITSSD001,,1,1,,1,1,1,2,0.0100,0.0100,1.0000,,,1,100,0,0,0,Temporary Rule. Deactivated on 3rd January 2024.,1,2024-01-03 00:00:00,,,,2024-01-03 00:00:00,0,,,,,IT,
+,,,IT002,ITSSD002,,1,1,,1,1,1,2,0.0300,0.0300,1.0000,,,3,100,0,0,0,Temporary Rule. Deactivated on 3rd January 2024.,1,2024-01-03 00:00:00,,,,2024-01-03 00:00:00,0,,,,,IT,
+,,,IT003,ITSSD003,,1,1,,1,51,1,2,0.0100,0.0000,0.0100,,,1,100,0,0,0,Temporary Rule. Deactivated on 3rd January 2024.,1,2024-01-03 00:00:00,,,,2024-01-03 00:00:00,0,,,,,IT,
+,,,IT004,ITSSD004,,1,1,,9,1,1,1,0.0500,0.0500,1.0000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT005,ITSSD005,,1,1,,9,22,1,1,0.1000,0.0500,0.1500,,,10,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT006,ITSSD006,,1,1,,9,22,1,1,0.1500,0.1000,0.2000,,,15,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT007,ITSSD007,,1,1,,9,22,1,1,0.2000,0.1500,0.2500,,,20,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT008,ITSSD008,,1,1,,9,22,1,1,0.2500,0.2000,0.3000,,,25,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT009,ITSSD009,,1,1,,9,22,1,1,0.3000,0.2500,0.5000,,,30,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0010,ITSSD010,,1,1,,9,22,1,1,0.5000,0.3000,0.6660,,,50,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0011,ITSSD011,,1,1,,9,22,1,1,0.6660,0.5000,1.0000,,,66.6,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0012,ITSSD012,,1,1,,9,51,1,1,0.0500,0.0000,0.0500,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0013,ITSSD013,,1,1,,9,1,1,2,0.0300,0.0300,1.0000,,,3,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0014,ITSSD014,,1,1,,9,22,1,2,0.0500,0.0300,0.1000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0015,ITSSD015,,1,1,,9,22,1,2,0.1000,0.0500,0.1500,,,10,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0016,ITSSD016,,1,1,,9,22,1,2,0.1500,0.1000,0.2000,,,15,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0017,ITSSD017,,1,1,,9,22,1,2,0.2000,0.1500,0.2500,,,20,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0018,ITSSD018,,1,1,,9,22,1,2,0.2500,0.2000,0.3000,,,25,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0019,ITSSD019,,1,1,,9,22,1,2,0.3000,0.2500,0.5000,,,30,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0020,ITSSD020,,1,1,,9,22,1,2,0.5000,0.3000,0.6660,,,50,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0021,ITSSD021,,1,1,,9,22,1,2,0.6660,0.5000,0.9000,,,66.6,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0022,ITSSD022,,1,1,,9,22,1,2,0.9000,0.6660,1.0000,,,90,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0023,ITSSD023,,1,1,,9,51,1,2,0.0300,0.0000,0.0300,,,3,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0024,ITSSD024,,1,1,,9,1,1,3,0.0500,0.0500,1.0000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0025,ITSSD025,,1,1,,9,22,1,3,0.1000,0.0500,0.1500,,,10,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0026,ITSSD026,,1,1,,9,22,1,3,0.1500,0.1000,0.2000,,,15,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0027,ITSSD027,,1,1,,9,22,1,3,0.2000,0.1500,0.2500,,,20,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0028,ITSSD028,,1,1,,9,22,1,3,0.2500,0.2000,0.3000,,,25,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0029,ITSSD029,,1,1,,9,22,1,3,0.3000,0.2500,0.5000,,,30,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0030,ITSSD030,,1,1,,9,22,1,3,0.5000,0.3000,0.6660,,,50,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0031,ITSSD031,,1,1,,9,22,1,3,0.6660,0.5000,1.0000,,,66.6,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0032,ITSSD032,,1,1,,9,51,1,3,0.0500,0.0000,0.0500,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0033,ITSSN001,,2,1,,1,1,4,1,0.0010,0.0010,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0034,ITSSN002,,2,1,,1,21,4,1,0.0010,0.0010,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0035,ITSSN003,,2,1,,1,51,4,1,0.0010,0.0000,0.0010,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0036,ITSSN004,,2,1,,1,1,4,1,0.0050,0.0050,1.0000,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0037,ITSSN005,,2,1,,1,21,4,1,0.0010,0.0050,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,IT0038,ITSSN006,,2,1,,1,51,4,1,0.0050,0.0000,0.0050,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,IT,
+,,,JP001,JPSSD001,,1,1,,1,1,1,1,0.0500,0.0500,1.0000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,JP,
+,,,JP002,JPSSD002,,1,1,,1,21,1,1,0.0100,0.0500,1.0000,,,1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,JP,
+,,,JP003,JPSSD003,,1,1,,1,52,1,1,0.0100,0.0000,0.0500,,,1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,JP,
+,,,JP004,JPSSN001,,2,1,,3,1,4,1,0.0020,0.0020,1.0000,,,0.2,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,JP,
+,,,JP005,JPSSN002,,2,1,,3,24,4,1,0.0010,0.0020,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,JP,
+,,,JP006,JPSSN003,,2,1,,3,51,4,1,0.0020,0.0000,0.0020,,,0.2,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,JP,
+,,,JP007,JPSSN004,,2,1,,3,1,4,1,0.0050,0.0050,1.0000,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,JP,
+,,,JP008,JPSSN005,,2,1,,3,24,4,1,0.0010,0.0050,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,JP,
+,,,JP009,JPSSN006,,2,1,,3,51,4,1,0.0050,0.0000,0.0050,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,JP,
+,,,NL001,NLSSD001,,1,1,,1,1,1,1,0.0300,0.0300,1.0000,,,3,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL002,NLSSD002,,1,1,,1,22,1,1,0.1000,0.0300,0.1500,,,10,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL003,NLSSD003,,1,1,,1,22,1,1,0.1500,0.1000,0.2000,,,15,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL004,NLSSD004,,1,1,,1,22,1,1,0.2000,0.1500,0.2500,,,20,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL005,NLSSD005,,1,1,,1,22,1,1,0.2500,0.2000,0.3000,,,25,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL006,NLSSD006,,1,1,,1,22,1,1,0.3000,0.2500,0.4000,,,30,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL007,NLSSD007,,1,1,,1,22,1,1,0.4000,0.3000,0.5000,,,40,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL008,NLSSD008,,1,1,,1,22,1,1,0.5000,0.4000,0.6000,,,50,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL009,NLSSD009,,1,1,,1,22,1,1,0.6000,0.5000,0.7500,,,60,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0010,NLSSD010,,1,1,,1,22,1,1,0.7500,0.6000,0.9500,,,75,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0011,NLSSD011,,1,1,,1,22,1,1,0.9500,0.7500,1.0000,,,95,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0012,NLSSD012,,1,1,,1,51,1,1,0.0300,0.0000,0.0300,,,3,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0013,NLSSD013,,1,1,,9,1,1,1,0.0300,0.0300,1.0000,,,3,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0014,NLSSD014,,1,1,,9,22,1,1,0.1000,0.0300,0.1500,,,10,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0015,NLSSD015,,1,1,,9,22,1,1,0.1500,0.1000,0.2000,,,15,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0016,NLSSD016,,1,1,,9,22,1,1,0.2000,0.1500,0.2500,,,20,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0017,NLSSD017,,1,1,,9,22,1,1,0.2500,0.2000,0.3000,,,25,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0018,NLSSD018,,1,1,,9,22,1,1,0.3000,0.2500,0.4000,,,30,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0019,NLSSD019,,1,1,,9,22,1,1,0.4000,0.3000,0.5000,,,40,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0020,NLSSD020,,1,1,,9,22,1,1,0.5000,0.4000,0.6000,,,50,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0021,NLSSD021,,1,1,,9,22,1,1,0.6000,0.5000,0.7500,,,60,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0022,NLSSD022,,1,1,,9,22,1,1,0.7500,0.6000,0.9500,,,75,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0023,NLSSD023,,1,1,,9,22,1,1,0.9500,0.7500,1.0000,,,95,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0024,NLSSD024,,1,1,,9,51,1,1,0.0300,0.0000,0.0300,,,3,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0025,NLSSD025,,1,1,,1,22,1,1,0.0500,0.0300,0.1000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0026,NLSSD026,,1,1,,9,22,1,1,0.0500,0.0300,0.1000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0027,NLSSG001,,1,1,,1,1,3,1,0.0300,0.0300,1.0000,,,3,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0028,NLSSG002,,1,1,,1,22,3,1,0.0300,0.0300,0.0500,,,3,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0029,NLSSG003,,1,1,,1,22,3,1,0.0500,0.0300,0.1000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0030,NLSSG004,,1,1,,1,22,3,1,0.1000,0.0500,0.1500,,,10,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0031,NLSSG005,,1,1,,1,22,3,1,0.1500,0.1000,0.2000,,,15,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0032,NLSSG006,,1,1,,1,22,3,1,0.2000,0.1500,0.2500,,,20,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0033,NLSSG007,,1,1,,1,22,3,1,0.2500,0.2000,0.3000,,,25,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0034,NLSSG008,,1,1,,1,22,3,1,0.3000,0.2500,0.4000,,,30,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0035,NLSSG009,,1,1,,1,22,3,1,0.4000,0.3000,0.5000,,,40,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0036,NLSSG010,,1,1,,1,22,3,1,0.5000,0.4000,0.6000,,,50,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0037,NLSSG011,,1,1,,1,22,3,1,0.6000,0.5000,0.7500,,,60,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0038,NLSSG012,,1,1,,1,22,3,1,0.7500,0.6000,0.9500,,,75,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0039,NLSSG013,,1,1,,1,22,3,1,0.9500,0.7500,1.0000,,,95,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0040,NLSSG014,,1,1,,1,51,3,1,0.0300,0.0000,0.0300,,,3,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0041,NLSSN001,,2,1,,1,1,4,1,0.0010,0.0010,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0042,NLSSN002,,2,1,,1,21,4,1,0.0010,0.0010,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0043,NLSSN003,,2,1,,1,51,4,1,0.0010,0.0000,0.0010,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0044,NLSSN004,,2,1,,1,1,4,1,0.0050,0.0050,1.0000,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0045,NLSSN005,,2,1,,1,21,4,1,0.0010,0.0050,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NL0046,NLSSN006,,2,1,,1,51,4,1,0.0050,0.0000,0.0050,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NL,
+,,,NO001,NOSSD001,,1,1,,1,1,1,1,0.0500,0.0500,1.0000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO002,NOSSD002,,1,1,,1,22,1,1,0.1000,0.0500,0.1500,,,10,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO003,NOSSD003,,1,1,,1,22,1,1,0.1500,0.1000,0.2000,,,15,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO004,NOSSD004,,1,1,,1,22,1,1,0.2000,0.1500,0.2500,,,20,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO005,NOSSD005,,1,1,,1,22,1,1,0.2500,0.2000,0.3333,,,25,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO006,NOSSD006,,1,1,,1,22,1,1,0.3333,0.2500,0.5000,,,1,3,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO007,NOSSD007,,1,1,,1,22,1,1,0.5000,0.3333,0.6666,,,50,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO008,NOSSD008,,1,1,,1,22,1,1,0.6666,0.5000,0.9000,,,2,3,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO009,NOSSD009,,1,1,,1,22,1,1,0.9000,0.6666,1.0000,,,90,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO0010,NOSSD010,,1,1,,1,51,1,1,0.0500,0.0000,0.0500,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO0011,NOSSD011,,1,1,,9,1,1,1,0.0500,0.0500,1.0000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO0012,NOSSD012,,1,1,,9,22,1,1,0.1000,0.0500,0.1500,,,10,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO0013,NOSSD013,,1,1,,9,22,1,1,0.1500,0.1000,0.2000,,,15,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO0014,NOSSD014,,1,1,,9,22,1,1,0.2000,0.1500,0.2500,,,20,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO0015,NOSSD015,,1,1,,9,22,1,1,0.2500,0.2000,0.3333,,,25,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO0016,NOSSD016,,1,1,,9,22,1,1,0.3333,0.2500,0.5000,,,1,3,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO0017,NOSSD017,,1,1,,9,22,1,1,0.5000,0.3333,0.6666,,,50,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO0018,NOSSD018,,1,1,,9,22,1,1,0.6666,0.5000,0.9000,,,2,3,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO0019,NOSSD019,,1,1,,9,22,1,1,0.9000,0.6666,1.0000,,,90,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO0020,NOSSD020,,1,1,,9,51,1,1,0.0500,0.0000,0.0500,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO0021,NOSSN001,,2,1,,1,1,4,1,0.0010,0.0010,1.0000,,,0.1,100,0,0,0,0,1,2023-07-03 15:52:00,,,,2023-07-03 15:52:00,1,,,,,NO,
+,,,NO0022,NOSSN002,,2,1,,1,21,4,1,0.0010,0.0010,1.0000,,,0.1,100,0,0,0,0,1,2023-07-03 15:52:00,,,,2023-07-03 15:52:00,1,,,,,NO,
+,,,NO0023,NOSSN003,,2,1,,1,51,4,1,0.0010,0.0000,0.0010,,,0.1,100,0,0,0,0,1,2023-07-03 15:52:00,,,,2023-07-03 15:52:00,1,,,,,NO,
+,,,NO0024,NOSSN004,,2,1,,1,1,4,1,0.0050,0.0050,1.0000,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO0025,NOSSN005,,2,1,,1,21,4,1,0.0010,0.0050,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,NO0026,NOSSN006,,2,1,,1,51,4,1,0.0050,0.0000,0.0050,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,NO,
+,,,SE001,SESSD001,,1,1,,1,1,1,1,0.0500,0.0500,1.0000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE002,SESSD002,,1,1,,1,22,1,1,0.1000,0.0500,0.1500,,,10,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE003,SESSD003,,1,1,,1,22,1,1,0.1500,0.1000,0.2000,,,15,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE004,SESSD004,,1,1,,1,22,1,1,0.2000,0.1500,0.2500,,,20,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE005,SESSD005,,1,1,,1,22,1,1,0.2500,0.2000,0.3000,,,25,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE006,SESSD006,,1,1,,1,22,1,1,0.3000,0.2500,0.5000,,,30,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE007,SESSD007,,1,1,,1,22,1,1,0.5000,0.3000,0.6666,,,50,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE008,SESSD008,,1,1,,1,22,1,1,0.6666,0.5000,0.9000,,,2,3,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE009,SESSD009,,1,1,,1,22,1,1,0.9000,0.6666,1.0000,,,90,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0010,SESSD010,,1,1,,1,51,1,1,0.0500,0.0000,0.0500,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0011,SESSD011,,1,1,,9,1,1,1,0.0500,0.0500,1.0000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0012,SESSD012,,1,1,,9,22,1,1,0.1000,0.0500,0.1500,,,10,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0013,SESSD013,,1,1,,9,22,1,1,0.1500,0.1000,0.2000,,,15,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0014,SESSD014,,1,1,,9,22,1,1,0.2000,0.1500,0.2500,,,20,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0015,SESSD015,,1,1,,9,22,1,1,0.2500,0.2000,0.3000,,,25,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0016,SESSD016,,1,1,,9,22,1,1,0.3000,0.2500,0.5000,,,30,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0017,SESSD017,,1,1,,9,22,1,1,0.5000,0.3000,0.6666,,,50,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0018,SESSD018,,1,1,,9,22,1,1,0.6666,0.5000,0.9000,,,2,3,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0019,SESSD019,,1,1,,9,22,1,1,0.9000,0.6666,1.0000,,,90,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0020,SESSD020,,1,1,,9,51,1,1,0.0500,0.0000,0.0500,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0021,SESSN001,,2,1,,1,1,4,1,0.0010,0.0010,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0022,SESSN002,,2,1,,1,21,4,1,0.0010,0.0010,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0023,SESSN003,,2,1,,1,51,4,1,0.0010,0.0000,0.0010,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0024,SESSN004,,2,1,,1,1,4,1,0.0050,0.0050,1.0000,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0025,SESSN005,,2,1,,1,21,4,1,0.0010,0.0050,1.0000,,,0.1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,SE0026,SESSN006,,2,1,,1,51,4,1,0.0050,0.0000,0.0050,,,0.5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,SE,
+,,,US001,USSSD001,,1,1,,8,1,1,1,0.0500,0.0500,1.0000,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,US,
+,,,US002,USSSD002,,1,1,,8,21,1,1,0.0100,0.0500,1.0000,,,1,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,US,
+,,,US003,USSSD003,,1,1,,8,51,1,1,0.0500,0.0000,0.0500,,,5,100,0,0,0,0,1,2019-11-12 15:52:00,,,,2019-11-12 15:52:00,1,,,,,US,
+,,,CA0013,CASSD004,,1,1,,8,22,1,1,0.0250,0.0100,0.0400,,,2.5,100,0,0,0,ARMS Subsequent Threshold,1,2023-12-01 15:52:00,,,,2023-12-01 15:52:00,1,,,,,CA,
+,,,CA0014,CASSD005,,1,1,,8,22,1,1,0.0500,0.0400,0.0600,,,5,100,0,0,0,ARMS Subsequent Threshold,1,2023-12-01 15:52:00,,,,2023-12-01 15:52:00,1,,,,,CA,
+,,,CA0015,CASSD006,,1,1,,8,22,1,1,0.0750,0.0600,0.0900,,,7.5,100,0,0,0,ARMS Subsequent Threshold,1,2023-12-01 15:52:00,,,,2023-12-01 15:52:00,1,,,,,CA,
+,,,CA0016,CASSD007,,1,1,,8,22,1,1,0.1000,0.0900,0.1100,,,10,100,0,0,0,ARMS Subsequent Threshold,1,2023-12-01 15:52:00,,,,2023-12-01 15:52:00,1,,,,,CA,
+,,,CA0017,CASSD008,,1,1,,8,22,1,1,0.1250,0.1100,0.1400,,,12.5,100,0,0,0,ARMS Subsequent Threshold,1,2023-12-01 15:52:00,,,,2023-12-01 15:52:00,1,,,,,CA,
+,,,CA0018,CASSD009,,1,1,,8,22,1,1,0.1500,0.1400,0.1600,,,15,100,0,0,0,ARMS Subsequent Threshold,1,2023-12-01 15:52:00,,,,2023-12-01 15:52:00,1,,,,,CA,
+,,,CA0019,CASSD010,,1,1,,8,22,1,1,0.1750,0.1600,0.1900,,,17.5,100,0,0,0,ARMS Subsequent Threshold,1,2023-12-01 15:52:00,,,,2023-12-01 15:52:00,1,,,,,CA,
+,,,CA0020,CASSD011,,1,1,,8,22,1,1,0.2000,0.1900,0.2100,,,20,100,0,0,0,ARMS Subsequent Threshold,1,2023-12-01 15:52:00,,,,2023-12-01 15:52:00,1,,,,,CA,
+,,,CA0021,CASSD012,,1,1,,10,1,1,1,0.1000,0.1000,1.0000,,,10,100,0,0,0,Insider Initial Rule,1,2023-12-01 15:52:00,,,,2023-12-01 15:52:00,1,,,,,CA,
+,,,CA0022,CASSD013,,1,1,,10,21,1,1,0.0000,0.1000,1.0000,,,0,100,0,0,0,Insider Subsequent Rule,1,2023-12-01 15:52:00,,,,2023-12-01 15:52:00,1,,,,,CA,
+,,,CA0023,CASSD014,,1,1,,10,51,1,1,0.1000,0.0000,0.1000,,,10,100,0,0,0,Insider Cessation Rule,1,2023-12-01 15:52:00,,,,2023-12-01 15:52:00,1,,,,,CA,
