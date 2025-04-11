@@ -1,0 +1,2 @@
+TradeDate|Fund|ProductType|InternalSecurityID|SecurityType|MDID|StockExchangeCode|ISIN|SecurityCode|SEDOL|CUSIP|Ticker|UnderlyingSecurityType|UnderlyingMDID|UnderlyingSecurityName|UnderlyingExchangeCode|UnderlyingISIN|UnderlyingSecurityCode|UnderlyingSEDOL|UnderlyingCUSIP|UnderlyingTicker|Quantity|SettlementType|NotionalAmountUnderlying|MarketValueSecurity|SettledQuantity|Hedging|MarketValueSecurityAmountUSD
+2025-04-02|GNS Fund M23|Shares||CONVERTIBLEPS|SECCONV01|CHS|SECCONV01ISIN|||||EQTY|SECCONV02|SEC Convertible EQTY 02|CHS|SECCONV02EISIN|||||4800|Physical|||||
